@@ -8,7 +8,7 @@ const files=  fs.readdir(url, (err, items)=> {
             if(stats.isFile()) {
                 const res=[];
                 res.push(path.basename(item, path.extname(item)))
-                res.push(path.extname(item))
+                res.push(path.extname(item).slice(1))
                 res.push((stats.size/1024).toFixed(2)+'kb')
                 console.log(res.join(' - '))
             }            
