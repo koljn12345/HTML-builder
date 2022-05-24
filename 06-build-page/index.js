@@ -55,7 +55,6 @@ async function customCopyFile(dir) {
     let urlAssetsBundleF=  urlAssetsBundle
     if(path.basename(dir)!== 'assets') {
         urlAssetsBundleF= path.join(urlAssetsBundle, path.basename(dir)) 
-        console.log(urlAssetsBundleF)
         await fs.promises.mkdir(urlAssetsBundleF, { recursive: true });
     }
     const items = await fs.promises.readdir(dir);
